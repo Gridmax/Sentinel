@@ -17,4 +17,4 @@ server_port: 6849
 agent_port: 6848
 
 # Time for Active sending data 
-agent_interval: 10
+agent_interval: 1m

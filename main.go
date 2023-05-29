@@ -8,6 +8,7 @@ import (
   "gopkg.in/yaml.v2"
 	"io/ioutil"
   "strconv"
+  "github.com/Gridmax/Sentinel/Utility/ETL/timeConvert"
 )
 
 type Conf struct {
@@ -17,7 +18,7 @@ type Conf struct {
   AgentPort int `yaml:"agent_port"`
   HostName string `yaml:"host_name"`
   HostGroup string `yaml:"host_group"`
- // agentInterval int64 `yaml:"agent_interval"`
+  agentInterval string `yaml:"agent_interval"`
 }
 
 const (
@@ -107,8 +108,7 @@ func startClient() {
 		fmt.Println("Message sent to server")
 
 		// Wait for the specified interval before sending the next message
-		//time.Sleep(int(config.agentInterval) * time.Second)
-	  time.Sleep(interval)
+	  time.Sleep(timeConvert.Get(config.agentInterval))
   }
 }
 

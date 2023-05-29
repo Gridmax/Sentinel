@@ -13,13 +13,9 @@ import (
 //  return interval 
 //}
 
-func timeConvert(timeConfig string) float64{
+func Get(timeConfig string) float64{
   get, _ := time.ParseDuration(timeConfig)
   convertSecond := get.Seconds()
   return convertSecond
-}
-
-func main() {
-  fmt.Println(timeConvert("1m"))
 }
 
