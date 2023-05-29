@@ -1,5 +1,5 @@
 //package configLoad
-package main
+package configloa 
 
 func loadConfig(filename string) (*Conf, error) {
 	// Read the YAML file
