@@ -8,7 +8,7 @@ import (
   "gopkg.in/yaml.v2"
 	"io/ioutil"
   "strconv"
-  "github.com/Gridmax/Sentinel/Utility/ETL/timeConvert"
+  "github.com/Gridmax/Sentinel/Utility/ETL/timeconvert"
 )
 
 type Conf struct {
@@ -108,7 +108,7 @@ func startClient() {
 		fmt.Println("Message sent to server")
 
 		// Wait for the specified interval before sending the next message
-	  time.Sleep(timeConvert.Get(config.agentInterval))
+	  time.Sleep(timeconvert.GetInterval(config.agentInterval))
   }
 }
 

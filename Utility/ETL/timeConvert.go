@@ -1,4 +1,4 @@
-package timeConvert
+package timeconvert
 
 
 import (
