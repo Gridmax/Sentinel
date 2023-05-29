@@ -1,0 +1,20 @@
+# Active for sending to Hillock / Passive for Receiving order from Hillock
+agent_mode: active
+
+# Host name identifier
+host_name: CharlesMacBook
+
+# Host group identifier
+host_group: homelab
+
+# Hillock server address / IP address
+server_address: localhost
+
+# Hillock server port
+server_port: 6849
+
+# Listen for port in Agent for Passive Agent
+agent_port: 6848
+
+# Time for Active sending data 
+agent_interval: 1m
