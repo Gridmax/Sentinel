@@ -1,5 +1,5 @@
 package timeConvert
-//package main
+
 
 import (
 	"fmt"
