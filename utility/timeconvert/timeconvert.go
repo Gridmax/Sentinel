@@ -2,7 +2,7 @@
 package timeconvert
 
 import (
-	"fmt"
+  "fmt"
 	"time"
 )
 
@@ -13,9 +13,11 @@ import (
 //  return interval 
 //}
 
-func Get(timeConfig string) float64{
+func GetInterval(timeConfig string) int{
   get, _ := time.ParseDuration(timeConfig)
   convertSecond := get.Seconds()
-  return convertSecond
+  fmt.Println(int(convertSecond))
+  return int(convertSecond)
+
 }
 

@@ -5,21 +5,23 @@ import (
 	"fmt"
 	"net"
 	"time"
+  "gopkg.in/yaml.v2"
+	"io/ioutil"
   "strconv"
 
   "github.com/Gridmax/Sentinel/utility/timeconvert"
   "github.com/Gridmax/Sentinel/utility/configload"
 )
 
-//type Conf struct {
-//  ServerAddress string  `yaml:"server_address"`
-//  ServerPort int  `yaml:"server_port"`
-//  AgentMode string `yaml:"agent_mode"`
-//  AgentPort int `yaml:"agent_port"`
-//  HostName string `yaml:"host_name"`
-//  HostGroup string `yaml:"host_group"`
-//  AgentInterval string `yaml:"agent_interval"`
-//}
+type Conf struct {
+  ServerAddress string  `yaml:"server_address"`
+  ServerPort int  `yaml:"server_port"`
+  AgentMode string `yaml:"agent_mode"`
+  AgentPort int `yaml:"agent_port"`
+  HostName string `yaml:"host_name"`
+  HostGroup string `yaml:"host_group"`
+  AgentInterval string `yaml:"agent_interval"`
+}
 
 
 func main() {
