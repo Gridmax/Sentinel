@@ -8,6 +8,7 @@ import (
 
   "github.com/Gridmax/Sentinel-utility/sysinfo/cpu"
   "github.com/Gridmax/Sentinel-utility/sysinfo/ram"
+  "github.com/Gridmax/Sentinel-utility/sysinfo/uptime"
 )
 
 
@@ -46,9 +47,27 @@ func RamInfo() string {
   return ram_infos
 }
 
+func UpInfo() string {
+  uptime, err := uptime.Get()
+  if err != nil {
+    fmt.Fprintf(os.Stderr, "%s\n", err)
+  }
+  fmt.Println(uptime)
+  uptimeSecond := uptime.Seconds()
+  fmt.Println(uptimeSecond)
+
+//  up := time.ParseDuration(uptime)
+//  fmt.Println(up.Seconds())
+  up := "uptime:"
+  up += fmt.Sprintf("%f", uptimeSecond)
+  up += ":"
+  return up
+}
+
 func GeneralInfo(name string, group string) string{
   var generalInfo string
   generalInfo += "host_name:" + name + ":host_group:" + group + ":" 
+  generalInfo += UpInfo()
   generalInfo += CpuInfo()
   generalInfo += RamInfo()
   return generalInfo

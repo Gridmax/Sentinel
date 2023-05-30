@@ -6,7 +6,8 @@ import (
 )
 
 func DetectOS() string {
-  os := runtime.GOOS
+  os := "header:"
+  os += runtime.GOOS
   os += ":"
   fmt.Println(os)
   return os
