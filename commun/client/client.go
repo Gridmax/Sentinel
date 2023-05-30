@@ -10,6 +10,7 @@ import (
   "github.com/Gridmax/Sentinel/utility/timeconvert"
   "github.com/Gridmax/Sentinel/utility/configload"
   "github.com/Gridmax/Sentinel/collector/general"
+  "github.com/Gridmax/Sentinel/utility/osde"
 )
 
 func Start(configFile string) {
@@ -32,10 +33,10 @@ func Start(configFile string) {
 		defer conn.Close()
 
 		// Create the payload header and message
-		header := "HEADER2"
+    header := osde.DetectOS()
 		//message := "Payload message"
 
-    message := general.CpuInfo()
+    message := general.GeneralInfo(config.HostName, config.HostGroup)
 		// Encode the header and message into binary format
 		headerBytes := []byte(header)
 		messageBytes := []byte(message)
