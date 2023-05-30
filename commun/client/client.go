@@ -13,22 +13,19 @@ import (
   "github.com/Gridmax/Sentinel/utility/osde"
 )
 
-func Start(configFile string) {
+func Agent(configFile string) {
 
   config, err := configload.LoadConfig(configFile)
   if err != nil {
     fmt.Println("Failed to load config: ", err)
     return
   }
-	for {
-
+  for {
     remoteServer := config.ServerAddress + ":" + strconv.Itoa(config.ServerPort)
-    
     conn, err := net.Dial("tcp", remoteServer)
-	  
-    if err != nil {
-			fmt.Println("Failed to connect to server:", err)
-			return
+	  if err != nil{ 
+		  fmt.Println("Failed to connect to server:", err)
+      return
 		}
 		defer conn.Close()
 
@@ -38,7 +35,7 @@ func Start(configFile string) {
 
     message := general.GeneralInfo(config.HostName, config.HostGroup)
 		// Encode the header and message into binary format
-		headerBytes := []byte(header)
+	  headerBytes := []byte(header)
 		messageBytes := []byte(message)
 
 		// Calculate the size of the header and message
@@ -53,8 +50,7 @@ func Start(configFile string) {
 
 		// Encode the message size and write it to the buffer
 		binary.BigEndian.PutUint16(buffer[2:4], messageSize)
-
-		// Write the header to the buffer
+	  // Write the header to the buffer
 		copy(buffer[4:4+len(headerBytes)], headerBytes)
 
 		// Write the message to the buffer
@@ -75,6 +71,19 @@ func Start(configFile string) {
     //interval := timeconvert.GetInterval(config.AgentInterval) * time.Second
 		// Wait for the specified interval before sending the next message
     time.Sleep(time.Duration(interval) * time.Second)
-    
+  }
+}
+
+func Start(configFile string) {
+  config, err := configload.LoadConfig(configFile)
+  if err != nil {
+    fmt.Println("Failed to load config: ", err)
+    return
+  }
+
+  for i := 0; i < config.AgentRetry; i ++ {
+    Agent(configFile)
+    time.Sleep(time.Duration(10) * time.Second)
+
   }
 }

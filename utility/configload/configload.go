@@ -13,6 +13,8 @@ type Conf struct {
   HostName string `yaml:"host_name"`
   HostGroup string `yaml:"host_group"`
   AgentInterval string `yaml:"agent_interval"`
+  AgentRetry int `yaml:"agent_retry"`
+ 
 }
 
 
