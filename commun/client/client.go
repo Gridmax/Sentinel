@@ -1,38 +1,20 @@
-package main
+package client
 
 import (
 	"encoding/binary"
 	"fmt"
 	"net"
 	"time"
-  "gopkg.in/yaml.v2"
-	"io/ioutil"
   "strconv"
 
   "github.com/Gridmax/Sentinel/utility/timeconvert"
   "github.com/Gridmax/Sentinel/utility/configload"
+  "github.com/Gridmax/Sentinel/collector/general"
 )
 
-type Conf struct {
-  ServerAddress string  `yaml:"server_address"`
-  ServerPort int  `yaml:"server_port"`
-  AgentMode string `yaml:"agent_mode"`
-  AgentPort int `yaml:"agent_port"`
-  HostName string `yaml:"host_name"`
-  HostGroup string `yaml:"host_group"`
-  AgentInterval string `yaml:"agent_interval"`
-}
+func Start(configFile string) {
 
-
-func main() {
-	// Start the client
-	startClient()
-}
-
-
-func startClient() {
-
-  config, err := configload.loadConfig("config.yaml")
+  config, err := configload.LoadConfig(configFile)
   if err != nil {
     fmt.Println("Failed to load config: ", err)
     return
@@ -51,8 +33,9 @@ func startClient() {
 
 		// Create the payload header and message
 		header := "HEADER2"
-		message := "Payload message"
+		//message := "Payload message"
 
+    message := general.CpuInfo()
 		// Encode the header and message into binary format
 		headerBytes := []byte(header)
 		messageBytes := []byte(message)
@@ -94,4 +77,3 @@ func startClient() {
     
   }
 }
-

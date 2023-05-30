@@ -1,4 +1,3 @@
-//package configLoad
 package configload 
 
 import (
@@ -17,7 +16,7 @@ type Conf struct {
 }
 
 
-func loadConfig(filename string) (*Conf, error) {
+func LoadConfig(filename string) (*Conf, error) {
 	// Read the YAML file
 	data, err := ioutil.ReadFile(filename)
 	if err != nil {
