@@ -5,6 +5,7 @@ import (
   "os"
   "strconv"
   "strings"
+  "time"
 
   "github.com/Gridmax/Sentinel-utility/sysinfo/cpu"
   "github.com/Gridmax/Sentinel-utility/sysinfo/ram"
@@ -64,9 +65,20 @@ func UpInfo() string {
   return up
 }
 
+func LogTime() string {
+  now := time.Now()
+  timestamp := now.Unix()
+  timeNow := "timestamp:"
+  timeNow += strconv.FormatInt(timestamp, 10)
+  timeNow += ":"
+  return timeNow
+
+}
+
 func GeneralInfo(name string, group string) string{
   var generalInfo string
   generalInfo += "host_name:" + name + ":host_group:" + group + ":" 
+  generalInfo += LogTime()
   generalInfo += UpInfo()
   generalInfo += CpuInfo()
   generalInfo += RamInfo()
