@@ -6,6 +6,7 @@ import (
 	"net"
 	"time"
   "strconv"
+  "log"
 
   "github.com/Gridmax/Sentinel/utility/timeconvert"
   "github.com/Gridmax/Sentinel/utility/configload"
@@ -24,7 +25,8 @@ func Agent(configFile string) {
     remoteServer := config.ServerAddress + ":" + strconv.Itoa(config.ServerPort)
     conn, err := net.Dial("tcp", remoteServer)
 	  if err != nil{ 
-		  fmt.Println("Failed to connect to server:", err)
+      log.Println("1001 err,",err)
+		  //fmt.Println("Failed to connect to server:", err)
       return
 		}
 		defer conn.Close()
@@ -63,7 +65,8 @@ func Agent(configFile string) {
 			return
 		}
 
-		fmt.Println("Message sent to server")
+    log.Println("Message sent successfully, with size", headerSize + messageSize)
+//		fmt.Println("Message sent to server")
 
 
     interval := timeconvert.GetInterval(config.AgentInterval)
@@ -75,15 +78,24 @@ func Agent(configFile string) {
 }
 
 func Start(configFile string) {
+  log.Println("Starting Sentinel Agent")
+  log.Println("- - - - - - - - - - - - - - -")
   config, err := configload.LoadConfig(configFile)
   if err != nil {
     fmt.Println("Failed to load config: ", err)
     return
   }
-
+  log.Println("Sentinel Agent successfully started")
+  interval := timeconvert.GetInterval(config.AgentInterval)
   for i := 0; i < config.AgentRetry; i ++ {
+    if i > 0 {
+      log.Println("Failed to connect to Hillock server, retrying the ", i, " times")
+    }
+
+    //interval := timeconvert.GetInterval(config.AgentInterval)
+    time.Sleep(time.Duration(interval) * time.Second)
+
     Agent(configFile)
-    time.Sleep(time.Duration(10) * time.Second)
 
   }
 }

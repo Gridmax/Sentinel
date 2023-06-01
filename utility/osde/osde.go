@@ -1,7 +1,7 @@
 package osde
 
 import (
-  "fmt"
+//  "fmt"
   "runtime"
 )
 
@@ -9,6 +9,6 @@ func DetectOS() string {
   os := "header:"
   os += runtime.GOOS
   os += ":"
-  fmt.Println(os)
+//  fmt.Println(os)
   return os
 }

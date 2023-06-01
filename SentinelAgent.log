@@ -1,749 +1,99 @@
-2023/05/31 11:00:39 - - - - - - - - - - - - - - -
-2023/05/31 11:00:39 Sentinel Agent started
+mok  
+check []
+2023/05/31 17:25:14 - - - - - - - - - - - - - - -
+2023/05/31 17:25:14 Sentinel Agent started
 header:darwin:
-215h16m50.442551s
-775010.442551
-&{47333047 27410158 543093971 0 617837176}
+221h41m25.909861s
+798085.909861
+&{49445141 28547644 558215385 0 636208170}
+Message sent to server
+10
+header:darwin:
+221h41m35.922627s
+798095.922627
+&{49445889 28548586 558221660 0 636216135}
+Message sent to server
+10
+header:darwin:
+221h41m45.935376s
+798105.935376
+&{49446706 28549731 558227665 0 636224102}
+Message sent to server
+10
+mok  
+check []
+2023/05/31 17:26:33 - - - - - - - - - - - - - - -
+2023/05/31 17:26:33 Sentinel Agent started
+2023/05/31 17:26:33 Starting Sentinel Agent
+header:darwin:
+221h42m44.601777s
+798164.601777
+&{49452874 28553527 558264399 0 636270800}
 failed to scan output of vm_stat
 panic: runtime error: invalid memory address or nil pointer dereference
-[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x10013c73d]
-
-goroutine 1 [running]:
-github.com/Gridmax/Sentinel/collector/general.RamInfo()
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/collector/general/collector.go:38 +0x7d
-github.com/Gridmax/Sentinel/collector/general.GeneralInfo({0xc0000922b0?, 0xc000092310?}, {0xc0000922e0?, 0x1001cac88?})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/collector/general/collector.go:72 +0x125
-github.com/Gridmax/Sentinel/commun/client.Agent({0x100196c18?, 0x0?})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:36 +0x23b
-github.com/Gridmax/Sentinel/commun/client.Start({0x100196c18, 0xb})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:85 +0xaa
-main.main()
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/main.go:39 +0x1eb
-2023/05/31 11:01:35 - - - - - - - - - - - - - - -
-2023/05/31 11:01:35 Sentinel Agent started
-header:darwin:
-215h17m46.419704s
-775066.419704
-&{47337066 27412707 543131949 0 617881722}
-failed to scan output of vm_stat
-panic: runtime error: invalid memory address or nil pointer dereference
-[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x10013c73d]
-
-goroutine 1 [running]:
-github.com/Gridmax/Sentinel/collector/general.RamInfo()
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/collector/general/collector.go:38 +0x7d
-github.com/Gridmax/Sentinel/collector/general.GeneralInfo({0xc00001b0e0?, 0xc00001b140?}, {0xc00001b110?, 0x1001cac88?})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/collector/general/collector.go:72 +0x125
-github.com/Gridmax/Sentinel/commun/client.Agent({0x100196c18?, 0x0?})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:36 +0x23b
-github.com/Gridmax/Sentinel/commun/client.Start({0x100196c18, 0xb})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:85 +0xaa
-main.main()
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/main.go:39 +0x1eb
-2023/05/31 11:04:50 - - - - - - - - - - - - - - -
-2023/05/31 11:04:50 Sentinel Agent started
-Failed to load config:  open config.yaml: no such file or directory
-2023/05/31 11:05:39 - - - - - - - - - - - - - - -
-2023/05/31 11:05:39 Sentinel Agent started
-header:darwin:
-215h21m50.680333s
-775310.680333
-&{47361483 27426829 543287782 0 618076094}
-failed to scan output of vm_stat
-panic: runtime error: invalid memory address or nil pointer dereference
-[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x10013c73d]
-
-goroutine 1 [running]:
-github.com/Gridmax/Sentinel/collector/general.RamInfo()
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/collector/general/collector.go:38 +0x7d
-github.com/Gridmax/Sentinel/collector/general.GeneralInfo({0xc0001a0ef0?, 0xc0001a0f50?}, {0xc0001a0f20?, 0x1001cac88?})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/collector/general/collector.go:72 +0x125
-github.com/Gridmax/Sentinel/commun/client.Agent({0x100196c18?, 0x0?})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:36 +0x23b
-github.com/Gridmax/Sentinel/commun/client.Start({0x100196c18, 0xb})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:85 +0xaa
-main.main()
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/main.go:39 +0x1eb
-2023/05/31 11:06:52 - - - - - - - - - - - - - - -
-2023/05/31 11:06:52 Sentinel Agent started
-header:darwin:
-215h23m4.19717s
-775384.19717
-&{47367098 27430322 543337171 0 618134591}
-Message sent to server
-10
-header:darwin:
-215h23m14.214712s
-775394.214712
-&{47367790 27430768 543344011 0 618142569}
-Message sent to server
-10
-header:darwin:
-215h23m24.232023s
-775404.232023
-&{47368579 27431259 543350697 0 618150535}
-Message sent to server
-10
-header:darwin:
-215h23m34.248904s
-775414.248904
-&{47369375 27431735 543357400 0 618158510}
-Message sent to server
-10
-2023/05/31 11:18:06 - - - - - - - - - - - - - - -
-2023/05/31 11:18:06 Sentinel Agent started
-header:darwin:
-215h34m17.846336s
-776057.846336
-&{47421218 27463745 543785721 0 618670684}
-Message sent to server
-10
-header:darwin:
-215h34m27.862799s
-776067.862799
-&{47421978 27464242 543792432 0 618678652}
-Message sent to server
-10
-header:darwin:
-215h34m37.876828s
-776077.876828
-&{47423082 27464778 543798764 0 618686624}
-Message sent to server
-10
-header:darwin:
-215h34m47.892996s
-776087.892996
-&{47423722 27465256 543805626 0 618694604}
-Message sent to server
-10
-2023/05/31 11:29:29 - - - - - - - - - - - - - - -
-2023/05/31 11:29:29 Sentinel Agent started
-header:darwin:
-215h45m41.338429s
-776741.338429
-&{47467212 27494812 544253279 0 619215303}
-Message sent to server
-10
-header:darwin:
-215h45m51.356279s
-776751.356279
-&{47467909 27495280 544260092 0 619223281}
-Message sent to server
-10
-header:darwin:
-215h46m1.373296s
-776761.373296
-&{47468616 27495728 544266910 0 619231254}
-Message sent to server
-10
-header:darwin:
-215h46m11.390921s
-776771.390921
-&{47469454 27496245 544273523 0 619239222}
-Message sent to server
-10
-header:darwin:
-215h46m21.404827s
-776781.404827
-&{47470819 27496971 544279396 0 619247186}
-Message sent to server
-10
-header:darwin:
-215h46m31.418945s
-776791.418945
-&{47473003 27497852 544284303 0 619255158}
-Message sent to server
-10
-header:darwin:
-215h46m41.432419s
-776801.432419
-&{47474240 27498451 544290436 0 619263127}
-Message sent to server
-10
-header:darwin:
-215h46m51.448136s
-776811.448136
-&{47474927 27498879 544297297 0 619271103}
-Message sent to server
-10
-header:darwin:
-215h47m1.46279s
-776821.46279
-&{47475865 27499414 544303793 0 619279072}
-Message sent to server
-10
-header:darwin:
-215h47m11.476029s
-776831.476029
-&{47476703 27499898 544310441 0 619287042}
-Message sent to server
-10
-header:darwin:
-215h47m21.489563s
-776841.489563
-&{47477659 27500468 544316891 0 619295018}
-Message sent to server
-10
-header:darwin:
-215h47m31.505017s
-776851.505017
-&{47478328 27500953 544323723 0 619303004}
-Message sent to server
-10
-header:darwin:
-215h47m41.520748s
-776861.520748
-&{47478741 27501264 544330988 0 619310993}
-Message sent to server
-10
-header:darwin:
-215h47m51.536659s
-776871.536659
-&{47479299 27501659 544338018 0 619318976}
-Message sent to server
-10
-header:darwin:
-215h48m1.552496s
-776881.552496
-&{47479849 27502056 544345054 0 619326959}
-Message sent to server
-10
-header:darwin:
-215h48m11.568685s
-776891.568685
-&{47480302 27502414 544352231 0 619334947}
-Message sent to server
-10
-2023/05/31 11:32:12 - - - - - - - - - - - - - - -
-2023/05/31 11:32:12 Sentinel Agent started
-header:darwin:
-215h48m24.406439s
-776904.406439
-&{47480949 27502896 544361337 0 619345182}
-Message sent to server
-10
-header:darwin:
-215h48m34.420217s
-776914.420217
-&{47481437 27503253 544368474 0 619353164}
-Message sent to server
-10
-header:darwin:
-215h48m44.433988s
-776924.433988
-&{47483239 27503987 544373916 0 619361142}
-Message sent to server
-10
-header:darwin:
-215h48m54.450103s
-776934.450103
-&{47484027 27504455 544380644 0 619369126}
-Message sent to server
-10
-header:darwin:
-215h49m4.464824s
-776944.464824
-&{47484443 27505417 544387247 0 619377107}
-Message sent to server
-10
-header:darwin:
-215h49m14.478943s
-776954.478943
-&{47484838 27506259 544394002 0 619385099}
-Message sent to server
-10
-header:darwin:
-215h49m24.4937s
-776964.4937
-&{47485359 27506571 544401154 0 619393084}
-Message sent to server
-10
-header:darwin:
-215h49m34.510545s
-776974.510545
-&{47485733 27506932 544408413 0 619401078}
-Message sent to server
-10
-header:darwin:
-215h49m44.526542s
-776984.526542
-&{47486089 27507239 544415740 0 619409068}
-Message sent to server
-10
-header:darwin:
-215h49m54.544339s
-776994.544339
-&{47486510 27507526 544423023 0 619417059}
-Message sent to server
-10
-header:darwin:
-215h50m4.561098s
-777004.561098
-&{47486844 27507786 544430421 0 619425051}
-Message sent to server
-10
-header:darwin:
-215h50m14.579531s
-777014.579531
-&{47487205 27508070 544437769 0 619433044}
-Message sent to server
-10
-header:darwin:
-215h50m24.595775s
-777024.595775
-&{47487586 27508353 544445096 0 619441035}
-Message sent to server
-10
-header:darwin:
-215h50m34.613212s
-777034.613212
-&{47487930 27508609 544452488 0 619449027}
-Message sent to server
-10
-header:darwin:
-215h50m44.629235s
-777044.629235
-&{47488419 27509036 544459558 0 619457013}
-Message sent to server
-10
-header:darwin:
-215h50m54.644148s
-777054.644148
-&{47489030 27509405 544466569 0 619465004}
-Message sent to server
-10
-header:darwin:
-215h51m4.659868s
-777064.659868
-&{47489391 27509668 544473936 0 619472995}
-Message sent to server
-10
-header:darwin:
-215h51m14.676605s
-777074.676605
-&{47489726 27509938 544481322 0 619480986}
-Message sent to server
-10
-header:darwin:
-215h51m24.693853s
-777084.693853
-&{47490098 27510218 544488664 0 619488980}
-Message sent to server
-10
-header:darwin:
-215h51m34.710736s
-777094.710736
-&{47490454 27510490 544496026 0 619496970}
-Message sent to server
-10
-header:darwin:
-215h51m44.723693s
-777104.723693
-&{47490791 27511205 544502967 0 619504963}
-Message sent to server
-10
-header:darwin:
-215h51m54.740367s
-777114.740367
-&{47491221 27511860 544509877 0 619512958}
-Message sent to server
-10
-header:darwin:
-215h52m4.75772s
-777124.75772
-&{47491546 27512110 544517295 0 619520951}
-Message sent to server
-10
-header:darwin:
-215h52m14.773983s
-777134.773983
-&{47491875 27512380 544524685 0 619528940}
-Message sent to server
-10
-header:darwin:
-215h52m24.790634s
-777144.790634
-&{47492248 27512803 544531883 0 619536934}
-Message sent to server
-10
-header:darwin:
-215h52m34.808037s
-777154.808037
-&{47492570 27513070 544539286 0 619544926}
-Message sent to server
-10
-header:darwin:
-215h52m44.825669s
-777164.825669
-&{47492887 27513365 544546664 0 619552916}
-Message sent to server
-10
-header:darwin:
-215h52m54.840369s
-777174.840369
-&{47493277 27513705 544553924 0 619560906}
-Message sent to server
-10
-header:darwin:
-215h53m4.857061s
-777184.857061
-&{47493638 27513974 544561286 0 619568898}
-Message sent to server
-10
-header:darwin:
-215h53m14.874374s
-777194.874374
-&{47493969 27514313 544568606 0 619576888}
-Message sent to server
-10
-header:darwin:
-215h53m24.888593s
-777204.888593
-&{47494310 27514567 544576001 0 619584878}
-Message sent to server
-10
-header:darwin:
-215h53m34.904898s
-777214.904898
-&{47494686 27514860 544583321 0 619592867}
-Message sent to server
-10
-header:darwin:
-215h53m44.922086s
-777224.922086
-&{47495041 27515141 544590681 0 619600863}
-Message sent to server
-10
-header:darwin:
-215h53m54.93919s
-777234.93919
-&{47495516 27515438 544597899 0 619608853}
-Message sent to server
-10
-header:darwin:
-215h54m4.954239s
-777244.954239
-&{47496097 27515875 544604871 0 619616843}
-Message sent to server
-10
-header:darwin:
-215h54m14.972953s
-777254.972953
-&{47496485 27516275 544612076 0 619624836}
-Message sent to server
-10
-header:darwin:
-215h54m24.991609s
-777264.991609
-&{47496815 27516523 544619492 0 619632830}
-Message sent to server
-10
-header:darwin:
-215h54m35.022215s
-777275.022215
-&{47498247 27517085 544625494 0 619640826}
-Message sent to server
-10
-header:darwin:
-215h54m45.052112s
-777285.052112
-&{47500386 27518223 544630195 0 619648804}
-Message sent to server
-10
-header:darwin:
-215h54m55.078249s
-777295.078249
-&{47500905 27518587 544637307 0 619656799}
-Message sent to server
-10
-header:darwin:
-215h55m5.108627s
-777305.108627
-&{47501399 27518867 544644532 0 619664798}
-Message sent to server
-10
-header:darwin:
-215h55m15.126304s
-777315.126304
-&{47501750 27519182 544651861 0 619672793}
-Message sent to server
-10
-header:darwin:
-215h55m25.144604s
-777325.144604
-&{47502113 27519477 544659194 0 619680784}
-Message sent to server
-10
-header:darwin:
-215h55m35.163564s
-777335.163564
-&{47502461 27519736 544666585 0 619688782}
-Message sent to server
-10
-header:darwin:
-215h55m45.177708s
-777345.177708
-&{47502809 27520017 544673945 0 619696771}
-Message sent to server
-10
-header:darwin:
-215h55m55.195769s
-777355.195769
-&{47503154 27520284 544681328 0 619704766}
-Message sent to server
-10
-header:darwin:
-215h56m5.213589s
-777365.213589
-&{47503515 27520558 544688685 0 619712758}
-Message sent to server
-10
-header:darwin:
-215h56m15.232778s
-777375.232778
-&{47503848 27520825 544696078 0 619720751}
-Message sent to server
-10
-header:darwin:
-215h56m25.251819s
-777385.251819
-&{47504194 27521085 544703469 0 619728748}
-Message sent to server
-10
-header:darwin:
-215h56m35.267856s
-777395.267856
-&{47504531 27521336 544710870 0 619736737}
-Message sent to server
-10
-header:darwin:
-215h56m45.285814s
-777405.285814
-&{47504911 27521677 544718144 0 619744732}
-Message sent to server
-10
-header:darwin:
-215h56m55.301594s
-777415.301594
-&{47506062 27522508 544724138 0 619752708}
-Message sent to server
-10
-header:darwin:
-215h57m5.318806s
-777425.318806
-&{47506944 27523049 544730690 0 619760683}
-Message sent to server
-10
-2023/05/31 11:49:08 - - - - - - - - - - - - - - -
-2023/05/31 11:49:08 Sentinel Agent started
-header:darwin:
-216h5m20.031619s
-777920.031619
-&{47557116 27551168 545046168 0 620154452}
-Message sent to server
-10
-header:darwin:
-216h5m30.048636s
-777930.048636
-&{47557500 27551473 545053467 0 620162440}
-Message sent to server
-10
-header:darwin:
-216h5m40.067666s
-777940.067666
-&{47558183 27551931 545060315 0 620170429}
-Message sent to server
-10
-header:darwin:
-216h5m50.085062s
-777950.085062
-&{47558631 27552268 545067516 0 620178415}
-Message sent to server
-10
-header:darwin:
-216h6m0.103634s
-777960.103634
-&{47559130 27552549 545074730 0 620186409}
-Message sent to server
-10
-header:darwin:
-216h6m10.122686s
-777970.122686
-&{47559589 27552880 545081933 0 620194402}
-Message sent to server
-10
-header:darwin:
-216h6m20.136462s
-777980.136462
-&{47560078 27553226 545089079 0 620202383}
-Message sent to server
-10
-header:darwin:
-216h6m30.153972s
-777990.153972
-&{47560424 27553488 545096467 0 620210379}
-Message sent to server
-10
-header:darwin:
-216h6m40.171418s
-778000.171418
-&{47560811 27553794 545103762 0 620218367}
-Message sent to server
-10
-header:darwin:
-216h6m50.187167s
-778010.187167
-&{47561245 27554896 545110225 0 620226366}
-Message sent to server
-10
-header:darwin:
-216h7m0.201921s
-778020.201921
-&{47561755 27555261 545117338 0 620234354}
-Message sent to server
-10
-header:darwin:
-216h7m10.217666s
-778030.217666
-&{47562274 27555620 545124448 0 620242342}
-Message sent to server
-10
-2023/05/31 12:14:15 - - - - - - - - - - - - - - -
-2023/05/31 12:14:15 Sentinel Agent started
-header:darwin:
-216h30m26.518091s
-779426.518091
-&{47665766 27621572 546066411 0 621353749}
-failed to scan output of vm_stat
-panic: runtime error: invalid memory address or nil pointer dereference
-[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x10014191d]
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x1001420dd]
 
 goroutine 1 [running]:
 github.com/Gridmax/Sentinel/collector/general.RamInfo()
 	/Users/charlesu/Desktop/GridMaxProject/Sentinel/collector/general/general.go:39 +0x7d
-github.com/Gridmax/Sentinel/collector/general.GeneralInfo({0xc00001b0e0?, 0xc00001b140?}, {0xc00001b110?, 0x1001d0cb8?})
+github.com/Gridmax/Sentinel/collector/general.GeneralInfo({0xc00001a490?, 0xc00001a4f0?}, {0xc00001a4c0?, 0x1001d3300?})
 	/Users/charlesu/Desktop/GridMaxProject/Sentinel/collector/general/general.go:84 +0x14b
-github.com/Gridmax/Sentinel/commun/client.Agent({0x10019c3d0?, 0x0?})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:36 +0x23b
-github.com/Gridmax/Sentinel/commun/client.Start({0x10019c3d0, 0xb})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:85 +0xaa
+github.com/Gridmax/Sentinel/commun/client.Agent({0x10019e464?, 0x1002c9040?})
+	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:37 +0x23b
+github.com/Gridmax/Sentinel/commun/client.Start({0x10019e464, 0xb})
+	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:87 +0xed
 main.main()
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/main.go:73 +0x665
-2023/05/31 12:59:51 - - - - - - - - - - - - - - -
-2023/05/31 12:59:51 Sentinel Agent started
+	/Users/charlesu/Desktop/GridMaxProject/Sentinel/main.go:89 +0xb96
+mok  
+check []
+2023/05/31 17:26:37 - - - - - - - - - - - - - - -
+2023/05/31 17:26:37 Sentinel Agent started
+2023/05/31 17:26:37 Starting Sentinel Agent
 header:darwin:
-217h16m2.721154s
-782162.721154
-&{47941295 27770015 547820649 0 623531959}
+221h42m48.237643s
+798168.237643
+&{49453285 28553735 558266675 0 636273695}
 failed to scan output of vm_stat
 panic: runtime error: invalid memory address or nil pointer dereference
-[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x10014191d]
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x1001420dd]
 
 goroutine 1 [running]:
 github.com/Gridmax/Sentinel/collector/general.RamInfo()
 	/Users/charlesu/Desktop/GridMaxProject/Sentinel/collector/general/general.go:39 +0x7d
-github.com/Gridmax/Sentinel/collector/general.GeneralInfo({0xc00001b0e0?, 0xc00001b140?}, {0xc00001b110?, 0x1001d0cb8?})
+github.com/Gridmax/Sentinel/collector/general.GeneralInfo({0xc0000a8ef0?, 0xc0000a8f50?}, {0xc0000a8f20?, 0x1001d3300?})
 	/Users/charlesu/Desktop/GridMaxProject/Sentinel/collector/general/general.go:84 +0x14b
-github.com/Gridmax/Sentinel/commun/client.Agent({0x10019c3d0?, 0x0?})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:36 +0x23b
-github.com/Gridmax/Sentinel/commun/client.Start({0x10019c3d0, 0xb})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:85 +0xaa
+github.com/Gridmax/Sentinel/commun/client.Agent({0x10019e464?, 0x1002c9040?})
+	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:37 +0x23b
+github.com/Gridmax/Sentinel/commun/client.Start({0x10019e464, 0xb})
+	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:87 +0xed
 main.main()
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/main.go:73 +0x665
-2023/05/31 13:00:02 - - - - - - - - - - - - - - -
-2023/05/31 13:00:02 Sentinel Agent started
+	/Users/charlesu/Desktop/GridMaxProject/Sentinel/main.go:89 +0xb96
+mok  
+check []
+2023/05/31 17:26:38 - - - - - - - - - - - - - - -
+2023/05/31 17:26:38 Sentinel Agent started
+2023/05/31 17:26:38 Starting Sentinel Agent
 header:darwin:
-217h16m14.285876s
-782174.285876
-&{47942137 27770576 547828449 0 623541162}
+221h42m50.126619s
+798170.126619
+&{49453521 28553897 558267780 0 636275198}
 Message sent to server
 10
 header:darwin:
-217h16m24.303188s
-782184.303188
-&{47942813 27771009 547835316 0 623549138}
+221h43m0.141808s
+798180.141808
+&{49454233 28554348 558274585 0 636283166}
 Message sent to server
 10
 header:darwin:
-217h16m34.320504s
-782194.320504
-&{47943463 27771430 547842217 0 623557110}
+221h43m10.157307s
+798190.157307
+&{49454991 28554816 558281330 0 636291137}
 Message sent to server
 10
 header:darwin:
-217h16m44.338401s
-782204.338401
-&{47944128 27771878 547849078 0 623565084}
-Message sent to server
-10
-header:darwin:
-217h16m54.354572s
-782214.354572
-&{47944962 27772406 547855686 0 623573054}
-Message sent to server
-10
-header:darwin:
-217h17m4.376081s
-782224.376081
-&{47945748 27772904 547862382 0 623581034}
-Message sent to server
-10
-2023/05/31 13:02:57 - - - - - - - - - - - - - - -
-2023/05/31 13:02:57 Sentinel Agent started
-header:darwin:
-217h19m8.669795s
-782348.669795
-&{47956436 27779385 547944139 0 623679960}
-failed to scan output of vm_stat
-panic: runtime error: invalid memory address or nil pointer dereference
-[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x10014253d]
-
-goroutine 1 [running]:
-github.com/Gridmax/Sentinel/collector/general.RamInfo()
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/collector/general/general.go:39 +0x7d
-github.com/Gridmax/Sentinel/collector/general.GeneralInfo({0xc0000aaef0?, 0xc0000aaf50?}, {0xc0000aaf20?, 0x1001d3338?})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/collector/general/general.go:84 +0x14b
-github.com/Gridmax/Sentinel/commun/client.Agent({0x10019e579?, 0x0?})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:36 +0x23b
-github.com/Gridmax/Sentinel/commun/client.Start({0x10019e579, 0xb})
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/commun/client/client.go:85 +0xaa
-main.main()
-	/Users/charlesu/Desktop/GridMaxProject/Sentinel/main.go:83 +0x896
-2023/05/31 13:03:16 - - - - - - - - - - - - - - -
-2023/05/31 13:03:16 Sentinel Agent started
-header:darwin:
-217h19m27.63682s
-782367.63682
-&{47957872 27780368 547956817 0 623695057}
-Message sent to server
-10
-header:darwin:
-217h19m37.651042s
-782377.651042
-&{47958559 27780835 547963634 0 623703028}
-Message sent to server
-10
-2023/05/31 13:03:39 - - - - - - - - - - - - - - -
-2023/05/31 13:03:39 Sentinel Agent started
-header:darwin:
-217h19m51.114495s
-782391.114495
-&{47959633 27781602 547972513 0 623713748}
-Message sent to server
-10
-2023/05/31 13:03:55 - - - - - - - - - - - - - - -
-2023/05/31 13:03:55 Sentinel Agent started
-header:darwin:
-217h20m7.213743s
-782407.213743
-&{47961057 27782496 547983010 0 623726563}
-Message sent to server
-10
-2023/05/31 13:51:14 - - - - - - - - - - - - - - -
-2023/05/31 13:51:14 Sentinel Agent started
-header:darwin:
-218h7m25.781183s
-785245.781183
-&{48229198 27920132 549837594 0 625986924}
+221h43m20.171456s
+798200.171456
+&{49455735 28555288 558288082 0 636299105}
 Message sent to server
 10

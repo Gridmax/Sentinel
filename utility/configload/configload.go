@@ -3,6 +3,8 @@ package configload
 import (
   "io/ioutil"
   "gopkg.in/yaml.v2"
+
+//  "log"
 )
 
 type Conf struct {

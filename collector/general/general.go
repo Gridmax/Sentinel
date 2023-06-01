@@ -18,7 +18,7 @@ func CpuInfo() string {
   if err != nil {
     fmt.Fprintf(os.Stderr, "%s\n", err)
   }
-  fmt.Println(cpu)
+//  fmt.Println(cpu)
   cpu_total := strconv.FormatUint(cpu.Total, 10)
   cpu_idle := strconv.FormatUint(cpu.Idle, 10)
   cpu_usage := strconv.FormatUint(cpu.System + cpu.User, 10)
@@ -53,9 +53,9 @@ func UpInfo() string {
   if err != nil {
     fmt.Fprintf(os.Stderr, "%s\n", err)
   }
-  fmt.Println(uptime)
+//  fmt.Println(uptime)
   uptimeSecond := uptime.Seconds()
-  fmt.Println(uptimeSecond)
+//  fmt.Println(uptimeSecond)
 
 //  up := time.ParseDuration(uptime)
 //  fmt.Println(up.Seconds())

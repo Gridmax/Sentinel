@@ -2,7 +2,7 @@
 package timeconvert
 
 import (
-  "fmt"
+//  "fmt"
 	"time"
 )
 
@@ -16,7 +16,7 @@ import (
 func GetInterval(timeConfig string) int{
   get, _ := time.ParseDuration(timeConfig)
   convertSecond := get.Seconds()
-  fmt.Println(int(convertSecond))
+ // fmt.Println(int(convertSecond))
   return int(convertSecond)
 
 }
