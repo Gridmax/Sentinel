@@ -6,7 +6,7 @@ import (
   "github.com/Gridmax/Sentinel/commun/client"	
 
 )
-
+//
 func main() {
   log.Println("- - - - - - - - - - - - - - -")
   client.Start("config.yaml")
