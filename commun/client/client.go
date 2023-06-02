@@ -12,21 +12,40 @@ import (
   "github.com/Gridmax/Sentinel/utility/configload"
   "github.com/Gridmax/Sentinel/collector/general"
   "github.com/Gridmax/Sentinel/utility/osde"
+  "github.com/Gridmax/Sentinel/utility/errck"
 )
 
+// For resetting retry 
+
+var reset bool
 func Agent(configFile string) {
 
   config, err := configload.LoadConfig(configFile)
+//  dialer := &net.Dialer{
+//    LocalAddr: &net.TCPAddr{
+//        IP:   net.ParseIP("127.0.0.1"),
+//        Port: config.AgentPort,
+//    },
+//  }
   if err != nil {
     fmt.Println("Failed to load config: ", err)
     return
   }
-  for {
+  //for {
     remoteServer := config.ServerAddress + ":" + strconv.Itoa(config.ServerPort)
-    conn, err := net.Dial("tcp", remoteServer)
-	  if err != nil{ 
-      log.Println("1001 err,",err)
-		  //fmt.Println("Failed to connect to server:", err)
+  dialer := &net.Dialer{
+      LocalAddr: &net.TCPAddr{
+      IP:   net.ParseIP("127.0.0.1"),
+      Port: config.AgentPort,
+      },
+    }
+    
+    conn, err := dialer.Dial("tcp", remoteServer)
+//    conn, err := net.Dial("tcp", remoteServer)
+	for {
+    if err != nil{ 
+      reset = true
+      errck.ErrCheck(err.Error())
       return
 		}
 		defer conn.Close()
@@ -61,11 +80,14 @@ func Agent(configFile string) {
 		// Send the binary data to the server
 		_, err = conn.Write(buffer)
 		if err != nil {
-			fmt.Println("Failed to send data:", err)
+			//fmt.Println("Failed to send data:", err)
+      reset = true
+      errck.ErrCheck(err.Error())
 			return
 		}
 
     log.Println("Message sent successfully, with size", headerSize + messageSize)
+    reset = false
 //		fmt.Println("Message sent to server")
 
 
@@ -77,25 +99,35 @@ func Agent(configFile string) {
   }
 }
 
+func OpenConn(configFile string){
+  return
+}
+
 func Start(configFile string) {
   log.Println("Starting Sentinel Agent")
   log.Println("- - - - - - - - - - - - - - -")
   config, err := configload.LoadConfig(configFile)
+  log.Println("Agent Listening / Sending with port", config.AgentPort)
+  log.Println("Hillock is set on", config.ServerAddress , "with port", config.ServerPort)
+  log.Println("Agent interval for", config.AgentInterval)
   if err != nil {
     fmt.Println("Failed to load config: ", err)
     return
   }
   log.Println("Sentinel Agent successfully started")
   interval := timeconvert.GetInterval(config.AgentInterval)
-  for i := 0; i < config.AgentRetry; i ++ {
-    if i > 0 {
-      log.Println("Failed to connect to Hillock server, retrying the ", i, " times")
-    }
+  for i := 0; i < config.AgentRetry + 1; i ++ {
+    if reset == false {
+      if i > 0 {
+        log.Println("Failed to connect to Hillock server, retrying the ", i, " times")
+      }
 
     //interval := timeconvert.GetInterval(config.AgentInterval)
-    time.Sleep(time.Duration(interval) * time.Second)
+      time.Sleep(time.Duration(interval) * time.Second)
+      Agent(configFile)
 
-    Agent(configFile)
-
+    }else if reset == true {
+      i = 0
+    }
   }
 }
