@@ -17,7 +17,6 @@ import (
 
 // For resetting retry 
 
-var reset bool
 func Agent(configFile string) {
 
   config, err := configload.LoadConfig(configFile)
@@ -44,7 +43,6 @@ func Agent(configFile string) {
 //    conn, err := net.Dial("tcp", remoteServer)
 	for {
     if err != nil{ 
-      reset = true
       errck.ErrCheck(err.Error())
       return
 		}
@@ -81,13 +79,11 @@ func Agent(configFile string) {
 		_, err = conn.Write(buffer)
 		if err != nil {
 			//fmt.Println("Failed to send data:", err)
-      reset = true
       errck.ErrCheck(err.Error())
 			return
 		}
 
     log.Println("Message sent successfully, with size", headerSize + messageSize)
-    reset = false
 //		fmt.Println("Message sent to server")
 
 
@@ -117,17 +113,13 @@ func Start(configFile string) {
   log.Println("Sentinel Agent successfully started")
   interval := timeconvert.GetInterval(config.AgentInterval)
   for i := 0; i < config.AgentRetry + 1; i ++ {
-    if reset == false {
-      if i > 0 {
-        log.Println("Failed to connect to Hillock server, retrying the ", i, " times")
-      }
+    if i > 0 {
+      log.Println("Failed to connect to Hillock server, retrying the ", i, " times")
+    }
 
     //interval := timeconvert.GetInterval(config.AgentInterval)
-      time.Sleep(time.Duration(interval) * time.Second)
-      Agent(configFile)
+    time.Sleep(time.Duration(interval) * time.Second)
+    Agent(configFile)
 
-    }else if reset == true {
-      i = 0
     }
   }
-}
