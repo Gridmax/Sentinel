@@ -1,23 +1,35 @@
 # Active for sending to Hillock / Passive for Receiving order from Hillock
-agent_mode: active
+# Default will be active mode, which means that your agent will be sending request to server
+agent_mode: passive
 
 # Host name identifier
+# Default will be empty, this is used to identifies your hosts / services on GridMax Stack 
 host_name: CharlesMacBook
 
 # Host group identifier
+# Default will be empty, this is used to identifies your hosts / services on GridMax Stack
 host_group: homelab
 
 # Hillock server address / IP address
+# Default will be localhost / 127.0.0.1
 server_address: localhost
 
 # Hillock server port
+# Default will be 6849
 server_port: 6849
 
 # Listen for port in Agent for Passive Agent
+# Default will be 6848 
 agent_port: 6848
 
-# Time for Active sending data 
+# Time for Active sending data via TCP
+# Default will be every minute / every 60 seconds
 agent_interval: 10s
 
 # Retry times when failed to connect
 agent_retry: 3
+
+# Keeping the logs locally when failes 
+# Default will be "false"
+keep_local : false
+

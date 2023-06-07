@@ -99,6 +99,10 @@ func OpenConn(configFile string){
   return
 }
 
+func PassiveAgent(configFile string){
+  return
+}
+
 func Start(configFile string) {
   log.Println("Starting Sentinel Agent")
   log.Println("- - - - - - - - - - - - - - -")
@@ -112,14 +116,19 @@ func Start(configFile string) {
   }
   log.Println("Sentinel Agent successfully started")
   interval := timeconvert.GetInterval(config.AgentInterval)
-  for i := 0; i < config.AgentRetry + 1; i ++ {
-    if i > 0 {
-      log.Println("Failed to connect to Hillock server, retrying the ", i, " times")
-    }
+  if(config.AgentMode == "active" || config.AgentMode == ""){
+    log.Println("Agent Mode is set for", "Active")
+    for i := 0; i < config.AgentRetry + 1; i ++ {
+      if i > 0 {
+        log.Println("Failed to connect to Hillock server, retrying the ", i, " times")
+      }
 
-    //interval := timeconvert.GetInterval(config.AgentInterval)
-    time.Sleep(time.Duration(interval) * time.Second)
-    Agent(configFile)
-
+      //interval := timeconvert.GetInterval(config.AgentInterval)
+      time.Sleep(time.Duration(interval) * time.Second)
+      Agent(configFile)
+      }
+    }else{
+      log.Println("Agent Mode is set for", "Passive")
+      PassiveAgent(configFile)
     }
   }
